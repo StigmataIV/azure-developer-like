@@ -22,6 +22,9 @@ public class FormController {
 	@Value("${app.title}")
 	private String appTitle;
 
+	@Value("${azure.storage.sas-token}")
+	private String sasToken;
+
 	@Autowired
 	UserFeedbackRepository repository;
 	@Autowired
@@ -36,6 +39,7 @@ public class FormController {
 		model.addAttribute("userName", auth.getName());
 		model.addAttribute("feedbacks", feedbacks);
 		model.addAttribute("message", null);
+		model.addAttribute("sasToken", sasToken);
 		return "form";
 	}
 

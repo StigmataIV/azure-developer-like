@@ -29,7 +29,7 @@
             <tr th:each="feedback: ${feedbacks}">
                 <td th:text="${feedback.title}" style="width: 30%"></td>
                 <td th:text="${feedback.comment}" style="width: 50%"></td>
-                <td style="width: 20%"><img th:src="${feedback.url}" class="image"/></td>
+                <td style="width: 20%"><img th:src="${feedback.url}+'?'+${sasToken}" class="image"/></td>
 
             </tr>
         </table>
